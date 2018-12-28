@@ -1,0 +1,18 @@
+<div *ngIf="historial">
+    <h1>Modify Historial</h1>
+    <label>
+      Patient:<select [(ngModel)]='selectedPatient'>
+        <option *ngFor="let patient of patients" [ngValue]='patient'>{{patient.name}}</option>
+      </select>
+    </label>
+    <label>
+      Date:<input type="date" [(ngModel)]='date'>
+    </label>
+    <label>
+      Blood Pressure:<input type="text" [(ngModel)]='bp'>
+    </label>
+    <label>
+      Heard Ratio:<input type="text" [(ngModel)]='hr'>
+    </label>
+    <button (click)='modify()'>Modify</button>
+  </div>

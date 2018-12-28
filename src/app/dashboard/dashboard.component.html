@@ -1,0 +1,32 @@
+<div>
+    <h1>SHOW HISTORIAL</h1>
+  <label>
+    To:<input type="date" name="startDate" [(ngModel)]="startDate" (ngModelChange)="mychange($event)">
+  </label>
+  <label>
+    From:<input type="date" name="endDate" [(ngModel)]="endDate" (ngModelChange)="mychange($event)">
+  </label>
+  <div>
+      <table class="w3-table w3-striped w3-white">
+          <tr>
+              <th>Id</th>
+              <th>Date</th>
+              <th>Patient's Name</th>
+              <th>Patient's Age</th>
+              <th>Patient's Blood Pressure</th>
+              <th>Patient's Heard Rate</th>
+          </tr>
+          <tr *ngFor='let historial of historials'>
+              <td>{{ historial.id }}</td>
+              <td>{{ historial.date }}</td>
+              <td>{{ historial.patient.name }}</td>
+              <td>{{ historial.patient.age }}</td>
+              <td>{{ historial.bloodPressure }}</td>
+              <td>{{ historial.heartRate }}</td>
+              <td><a routerLink="/modifyHistorial/{{historial.id}}">Modify</a></td>
+              <td><input type='button' value='Remove' (click)='removeHistorial(historial);'></td>
+          </tr>
+      </table>
+  </div>
+  
+</div>

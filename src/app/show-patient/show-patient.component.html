@@ -1,0 +1,17 @@
+<div>
+  <h1>Show Patient</h1>
+  <table class="w3-table w3-striped w3-white">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr *ngFor='let patient of patients'>
+    <td>{{patient.id}}</td>
+    <td>{{patient.name}}</td>
+    <td>{{patient.age}}</td>
+    <td><a routerLink="/modifyPatient/{{patient.id}}">Modify</a></td>
+    <td><button (click)='delete(patient)'>Delete</button></td>
+  </tr>
+</table>
+</div>
